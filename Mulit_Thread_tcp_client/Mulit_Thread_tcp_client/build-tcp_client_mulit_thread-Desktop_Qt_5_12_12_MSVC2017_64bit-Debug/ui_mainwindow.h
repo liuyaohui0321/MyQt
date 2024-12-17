@@ -47,6 +47,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *sendButton;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -137,6 +138,11 @@ public:
 
         horizontalLayout_2->addWidget(sendButton);
 
+        pushButton = new QPushButton(widget_3);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout_2->addWidget(pushButton);
+
         horizontalSpacer_2 = new QSpacerItem(153, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
@@ -169,6 +175,7 @@ public:
         connectpush->setText(QApplication::translate("MainWindow", "\350\277\236\346\216\245\346\234\215\345\212\241\345\231\250", nullptr));
         selectFilepush->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
         sendButton->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201\346\226\207\344\273\266", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "\346\270\205\351\231\244", nullptr));
     } // retranslateUi
 
 };

@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_TcpServer,&QTcpServer::newConnection,this,[=]()
     {
         m_TcpSocket=m_TcpServer->nextPendingConnection();
-        unsigned short port=m_TcpSocket->peerPort();
+        quint16 port=m_TcpSocket->peerPort();
         QString ip=m_TcpSocket->peerAddress().toString();
         QString temp=QString("[%1:%2]:成功连接").arg(ip).arg(port);
         ui->readtext->append(temp);
@@ -37,7 +37,8 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_listenButton_clicked()
 {
     unsigned short port=ui->portline->text().toUShort();
     m_TcpServer->listen(QHostAddress::Any,port);

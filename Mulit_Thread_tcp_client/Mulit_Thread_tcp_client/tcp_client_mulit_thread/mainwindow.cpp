@@ -65,3 +65,9 @@ void MainWindow::on_sendButton_clicked()
     emit sendfilepath(ui->Fileline->text());
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    ui->progressBar->setValue(0);
+}
+

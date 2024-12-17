@@ -27,6 +27,7 @@ void sendfile::connectserver(QString ip, unsigned short port)
 
 void sendfile::SENDFILE(QString path)
 {
+    static int num=0;
     if(path.isEmpty())
     {
         return;
@@ -39,7 +40,6 @@ void sendfile::SENDFILE(QString path)
 
     while(!file.atEnd())
     {
-       static int num=0;
        if(num==0)
        {
            m_Tcpsocket->write((char *)&file_size,4);
@@ -50,4 +50,5 @@ void sendfile::SENDFILE(QString path)
        emit progress(PERCENT);
        m_Tcpsocket->write(data.data());
     }
+    num=0;
 }
